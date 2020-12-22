@@ -1,6 +1,7 @@
 package com.tianwen.algorithms;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * wangjq
@@ -12,42 +13,53 @@ public class Algorithms5_String {
     final static char[] replaceArr = new char[]{'%', '2', '0'};
 
     /**
-     * 替换空格
-     * 输入字符串 字符串中的空格被替换成%20
-     * We are happy -> We%20are%20happy
+     * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
+     *
+     *  
+     *
+     * 示例 1：
+     *
+     * 输入：s = "We are happy."
+     * 输出："We%20are%20happy."
+     *  
+     *
+     * 限制：
+     *
+     * 0 <= s 的长度 <= 10000
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * @param args
      */
     public static void main(String[] args) {
-        char[] sourceArr = new char[]{'W', 'e', ' ', 'a', 'r', 'e', ' ', 'h', 'a', 'p', 'p', 'y'};
-        char[] resultArr = replace(sourceArr);
-        // [W, e, 0, 2, %, a, r, e, 0, 2, %, h, a, p, p, y]
-        System.out.println(Arrays.toString(resultArr));
+        String s = "We are happy.";
+        System.out.println(replaceSpace(s));
     }
 
-    static char[] replace(char[] sourceArr) {
-        int spaceCount = 0;
-        for (char c : sourceArr) {
-            if (c == space) {
-                spaceCount++;
+    public static String replaceSpace(String s) {
+        if (Objects.isNull(s) || s.length() == 0) {
+            return "";
+        }
+        char[] chars = s.toCharArray();
+        int count = 0;
+        for (char c : chars) {
+            if (c == ' ') {
+                count++;
             }
         }
-
-        // 替换后数组长度
-        char[] resultArr = new char[sourceArr.length - spaceCount + spaceCount * 3];
-        // 数组最后一位的下标
-        int sub1 = sourceArr.length - 1;
-        int sub2 = resultArr.length - 1;
-        while (sub1 >= 0) {
-            // 非空格直接复制
-            if (space != sourceArr[sub1]) {
-                resultArr[sub2--] = sourceArr[sub1--];
-                continue;
-            }
-            // 空格 改变下标 替换
-            sub1--;
-            for (char replace : replaceArr) {
-                resultArr[sub2--] = replace;
+        char[] resultArr = new char[s.length() + count * 2];
+        int sub = 0;
+        for (char c : chars) {
+            if (c == ' ') {
+                resultArr[sub++] = '%';
+                resultArr[sub++] = '2';
+                resultArr[sub++] = '0';
+            } else {
+                resultArr[sub++] = c;
             }
         }
-        return resultArr;
+        return new String(resultArr);
     }
+
 }
