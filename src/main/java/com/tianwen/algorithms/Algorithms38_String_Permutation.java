@@ -61,9 +61,10 @@ public class Algorithms38_String_Permutation {
         return false;
     }
 
-/*    private static void collect(char[] source, char[] result, int index, List<Integer> fixIndex, List<String> resultList) {
+    private static void collect(char[] source, char[] result, int index, List<Integer> fixIndex, List<String> resultList) {
         int length = source.length;
         if (index == length) {
+            resultList.add(new String(result));
             return;
         }
         char[] tempUsed = new char[length];
@@ -77,11 +78,8 @@ public class Algorithms38_String_Permutation {
             // 固定位数
             fixIndex.add(i);
             collect(source, result, index + 1, fixIndex, resultList);
-            if (index == length - 1) {
-                resultList.add(new String(result));
-            }
             fixIndex.remove(index);
         }
-    }*/
+    }
 
 }
