@@ -1,7 +1,5 @@
 package com.tianwen.algorithms;
 
-import lombok.NoArgsConstructor;
-
 /**
  * wangjq
  * 2020年11月07日  17:52
