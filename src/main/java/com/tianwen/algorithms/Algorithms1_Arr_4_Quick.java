@@ -20,17 +20,17 @@ public class Algorithms1_Arr_4_Quick {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(ARR));
         int hi = ARR.length - 1;
-        sortQuick(ARR, 0, hi);
+        quickSort(ARR, 0, hi);
         System.out.println(Arrays.toString(ARR));
     }
 
-    private static void sortQuick(int[] arr, int lo, int hi) {
+    private static void quickSort(int[] arr, int lo, int hi) {
         if (hi <= lo) {
             return;
         }
         int p = partition(arr, lo, hi);
-        sortQuick(arr, lo, p);
-        sortQuick(arr, p + 1, hi);
+        quickSort(arr, lo, p);
+        quickSort(arr, p + 1, hi);
     }
 
     // 分割
@@ -57,13 +57,13 @@ public class Algorithms1_Arr_4_Quick {
                 break;
             }
             // 到这里分别找到了左 右 两个不相符的值 交换他们
-            exchange(arr, i, j);
+            swap(arr, i, j);
         }
-        exchange(arr, lo, j);
+        swap(arr, lo, j);
         return j;
     }
 
-    private static void exchange(int[] arr, int sub1, int sub2) {
+    private static void swap(int[] arr, int sub1, int sub2) {
         int temp = arr[sub1];
         arr[sub1] = arr[sub2];
         arr[sub2] = temp;
