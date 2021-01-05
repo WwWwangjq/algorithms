@@ -6,7 +6,7 @@ import java.util.Arrays;
  * wangjq
  * 2020年11月07日  17:52
  */
-public class Algorithms10_2_Arr_Sort {
+public class Algorithms10_3_Arr_Sort {
 
     /**
      * 对几万名员工的年龄排序 要求O(n)

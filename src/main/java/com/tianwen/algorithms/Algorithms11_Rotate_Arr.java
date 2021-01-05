@@ -6,8 +6,6 @@ package com.tianwen.algorithms;
  */
 public class Algorithms11_Rotate_Arr {
 
-//    private final static int[] ARR = new int []{3, 4, 5, 7, 2};
-    private final static int[] ARR = new int []{1, 1, 1, 1, 1, 0};
 
     /**
      * 旋转数组的最小数字
@@ -18,26 +16,32 @@ public class Algorithms11_Rotate_Arr {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(getMin(ARR));
+//        int[] numbers = new int[]{1, 3, 5};
+//        int[] numbers = new int[]{1, 1, 1, 1, 1, 0};
+//        int[] numbers = new int[]{3, 4, 5, 7, 2};
+        int[] numbers = new int[]{2, 2, 2, 0, 1};
+        System.out.println(minArray(numbers));
     }
 
-    private static int getMin(int[] arr) {
-        return contraction(arr, 0, arr.length - 1);
+    private static int minArray(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return 0;
+        }
+        return contraction(numbers, 0, numbers.length - 1);
 
     }
 
     private static int contraction(int[] arr, int lo, int hi) {
-        if (lo == hi -1) {
-            return arr[hi];
+        if (lo == hi) {
+            return arr[lo];
         }
-        int mid = (lo + hi) / 2;
-        if (arr[mid] > arr[lo]) {
-            return contraction(arr, mid, hi);
-        } else if ((arr[mid] < arr[lo])) {
+        int mid = (lo + hi) >> 1;
+        if (arr[mid] < arr[hi]) {
             return contraction(arr, lo, mid);
+        } else if ((arr[mid] > arr[hi])) {
+            return contraction(arr, mid + 1, hi);
         } else {
-            // 没有考虑存在重复数据的情况
-            return 0;
+            return contraction(arr, lo, hi - 1);
         }
     }
     

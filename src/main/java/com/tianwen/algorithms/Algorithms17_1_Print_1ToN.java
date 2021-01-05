@@ -4,7 +4,7 @@ package com.tianwen.algorithms;
  * wangjq
  * 2020年11月07日  17:52
  */
-public class Algorithms17_Print_1ToN {
+public class Algorithms17_1_Print_1ToN {
 
 
     /**

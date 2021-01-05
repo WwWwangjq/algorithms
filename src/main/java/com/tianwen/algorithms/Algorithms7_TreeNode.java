@@ -38,6 +38,15 @@ public class Algorithms7_TreeNode {
         System.out.println(root);
     }
 
+    private static TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder == null || preorder.length == 0 || inorder == null || inorder.length == 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(preorder[0]);
+        build(preorder, inorder, root);
+        return root;
+    }
+
     static void build(int[] preorder, int[] inorder, TreeNode root) {
         if (Objects.isNull(root)) {
             return;

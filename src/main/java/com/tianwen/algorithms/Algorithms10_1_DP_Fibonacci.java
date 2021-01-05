@@ -4,10 +4,7 @@ package com.tianwen.algorithms;
  * wangjq
  * 2020年11月07日  17:52
  */
-public class Algorithms10_1_Fibonacci {
-    private final static int F0 = 0;
-    private final static int F1 = 1;
-    private final static int SUB = 2;
+public class Algorithms10_1_DP_Fibonacci {
 
 
     /**
@@ -20,7 +17,7 @@ public class Algorithms10_1_Fibonacci {
      * @param args
      */
     public static void main(String[] args) {
-        int n = 9;
+        int n = 45;
         if (n == F0) {
             System.out.println(0);
         } else if (n == F1) {
@@ -30,11 +27,25 @@ public class Algorithms10_1_Fibonacci {
         }
     }
 
+    private final static int F0 = 0;
+    private final static int F1 = 1;
+    private final static int SUB = 2;
+
+    public static int fib(int n) {
+        if (n == F0) {
+            return F0;
+        } else if (n == F1) {
+            return F1;
+        } else {
+            return calculate(F0, F1, SUB, n);
+        }
+    }
+
     // f0 + f1 = f2
     // f1 + f2 = f3
     // f2 + f3 = f4
     private static Integer calculate(Integer fa, Integer fb, int i, int n) {
-        Integer fc = fa + fb;
+        Integer fc = (fa + fb) % 1000000007;
         if (i++ == n) {
             return fc;
         }
