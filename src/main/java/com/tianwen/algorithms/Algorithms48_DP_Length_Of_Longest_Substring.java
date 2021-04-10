@@ -33,18 +33,18 @@ public class Algorithms48_DP_Length_Of_Longest_Substring {
         return result;
     }*/
 
-    public static int lengthOfLongestSubstring(String str) {
-        if (str == null || str.length() == 0) {
+    public static int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
 
         int temp = 0;
         int result = 0;
         Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < str.length(); i ++) {
-            char s = str.charAt(i);
-            Integer j = map.getOrDefault(s, -1);
-            map.put(s, i);
+        for (int i = 0; i < s.length(); i ++) {
+            char c = s.charAt(i);
+            Integer j = map.getOrDefault(c, -1);
+            map.put(c, i);
             temp = temp < i - j ? temp + 1 : i - j;
             result = Math.max(temp, result);
         }
