@@ -1,4 +1,4 @@
-package com.tianwen.leetcode;
+package com.tianwen.leetcode.tree;
 
 import com.tianwen.data.structure.TreeNode;
 
@@ -6,25 +6,27 @@ import java.util.*;
 
 /**
  * @Author: wangjq
- * @Date: 2021年04月14日 14:49
+ * @Date: 2021年04月14日 15:25
  */
-public class LeetCode_144 {
-    public List<Integer> preorderTraversal(TreeNode root) {
+public class LeetCode_145 {
+
+    public List<Integer> postorderTraversal(TreeNode root) {
         if (Objects.isNull(root)) {
             return Collections.emptyList();
         }
         LinkedList<TreeNode> treeNodes = new LinkedList<>();
-        treeNodes.addFirst(root);
-        List<Integer> resultList = new ArrayList<>();
+        treeNodes.push(root);
+        LinkedList<Integer> resultList = new LinkedList<>();
         while (!treeNodes.isEmpty()) {
             TreeNode treeNode = treeNodes.removeFirst();
-            resultList.add(treeNode.val);
-            if (Objects.nonNull(treeNode.right)) {
-                treeNodes.addFirst(treeNode.right);
-            }
+            resultList.addFirst(treeNode.val);
             if (Objects.nonNull(treeNode.left)) {
                 treeNodes.addFirst(treeNode.left);
             }
+            if (Objects.nonNull(treeNode.right)) {
+                treeNodes.addFirst(treeNode.right);
+            }
+
         }
         return resultList;
     }

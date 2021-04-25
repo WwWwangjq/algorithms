@@ -1,4 +1,4 @@
-package com.tianwen.leetcode;
+package com.tianwen.leetcode.tree;
 
 import lombok.Data;
 

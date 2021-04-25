@@ -1,9 +1,7 @@
-package com.tianwen.leetcode;
+package com.tianwen.leetcode.tree;
 
 import com.tianwen.data.structure.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**

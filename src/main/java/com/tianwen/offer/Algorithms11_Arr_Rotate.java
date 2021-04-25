@@ -4,7 +4,7 @@ package com.tianwen.offer;
  * wangjq
  * 2020年11月07日  17:52
  */
-public class Algorithms11_Rotate_Arr {
+public class Algorithms11_Arr_Rotate {
 
 
     /**
@@ -19,7 +19,9 @@ public class Algorithms11_Rotate_Arr {
 //        int[] numbers = new int[]{1, 3, 5};
 //        int[] numbers = new int[]{1, 1, 1, 1, 1, 0};
 //        int[] numbers = new int[]{3, 4, 5, 7, 2};
-        int[] numbers = new int[]{2, 2, 2, 0, 1};
+//        int[] numbers = new int[]{2, 2, 2, 0, 1};
+//        int[] numbers = new int[]{3,4,5,7,0,1,2};
+        int[] numbers = new int[]{2,3,4,0,1};
         System.out.println(minArray(numbers));
     }
 
@@ -27,11 +29,22 @@ public class Algorithms11_Rotate_Arr {
         if (numbers == null || numbers.length == 0) {
             return 0;
         }
-        return contraction(numbers, 0, numbers.length - 1);
-
+        int left = 0, right = numbers.length - 1;
+        while (left < right) {
+            int mid = (right + left) / 2;
+            if (numbers[mid] > numbers[right]) {
+                left = mid + 1;
+            } else if (numbers[mid] < numbers[right]) {
+                right = mid;
+            } else {
+                right --;
+            }
+        }
+        return numbers[right];
+//        return contraction(numbers, 0, numbers.length - 1);
     }
 
-    private static int contraction(int[] arr, int lo, int hi) {
+/*    private static int contraction(int[] arr, int lo, int hi) {
         if (lo == hi) {
             return arr[lo];
         }
@@ -43,6 +56,7 @@ public class Algorithms11_Rotate_Arr {
         } else {
             return contraction(arr, lo, hi - 1);
         }
-    }
+    }*/
+
     
 }
