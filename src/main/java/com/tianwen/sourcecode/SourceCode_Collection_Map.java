@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SourceCode_Collection_Map {
 
     public static void main(String[] args) throws Exception {
-        Map<String, Object> hashMap = new HashMap<>();
+/*        Map<String, Object> hashMap = new HashMap<>();
         hashMap.put("1", 1);
 
         Map<String, Object> linkedHashMap = new LinkedHashMap<>();
@@ -26,10 +26,13 @@ public class SourceCode_Collection_Map {
         hashSet.add("1");
 
         Set<String> linkedHashSet = new HashSet<>();
-        linkedHashSet.add("1");
+        linkedHashSet.add("1");*/
 
         ConcurrentHashMap<String, Object> concurrentHashMap = new ConcurrentHashMap<>();
-        concurrentHashMap.put("1", 1);
-
+        for (int i = 0; i < 1000000; i ++ ) {
+            concurrentHashMap.put(String.valueOf(i), "aaa" + i);
+//            System.out.println(i);
+        }
+        concurrentHashMap.get(17);
     }
 }
