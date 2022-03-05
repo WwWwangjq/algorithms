@@ -23,9 +23,9 @@ public class ListNode {
     @Override
     public String toString() {
         String s = val + ", ";
-        if (Objects.nonNull(next)) {
+/*        if (Objects.nonNull(next)) {
             s += next.toString();
-        }
+        }*/
         return s;
     }
 }
