@@ -3,6 +3,8 @@ package com.tianwen.data.structure;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -28,4 +30,15 @@ public class ListNode {
         }*/
         return s;
     }
+
+    public static List<Integer> listVal(ListNode head) {
+        List<Integer> result = new ArrayList<>();
+        ListNode node = head;
+        while (Objects.nonNull(node)) {
+            result.add(node.val);
+            node = node.next;
+        }
+        return result;
+    }
+
 }
