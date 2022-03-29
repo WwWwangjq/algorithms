@@ -24,11 +24,7 @@ public class ListNode {
 
     @Override
     public String toString() {
-        String s = val + ", ";
-/*        if (Objects.nonNull(next)) {
-            s += next.toString();
-        }*/
-        return s;
+        return val + "";
     }
 
     public static List<Integer> listVal(ListNode head) {
