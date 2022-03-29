@@ -1,12 +1,14 @@
 package com.tianwen.data.structure;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
  * wangjq
  * 2020年12月06日  18:10
  */
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class TreeNode {
