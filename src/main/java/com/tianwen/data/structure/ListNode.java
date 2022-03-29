@@ -37,4 +37,18 @@ public class ListNode {
         return result;
     }
 
+    public static List<List<Integer>> listVal(ListNode[] listNodeArr) {
+        List<List<Integer>> resultList = new ArrayList<>();
+        for (ListNode head : listNodeArr) {
+            List<Integer> result = new ArrayList<>();
+            ListNode node = head;
+            while (Objects.nonNull(node)) {
+                result.add(node.val);
+                node = node.next;
+            }
+            resultList.add(result);
+        }
+        return resultList;
+    }
+
 }
