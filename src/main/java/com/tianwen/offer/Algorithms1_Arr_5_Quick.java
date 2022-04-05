@@ -13,7 +13,9 @@ public class Algorithms1_Arr_5_Quick {
     public static void main(String[] args) {
 //        int[] nums = new int[]{5, 1, 8, 32, 8, 2, 32, 7, 4, 34, 6, 8, 45, 2, 5, 34, 7, 48, 324, 5};
 //        int[] nums = new int[]{1, -1};
-        int[] nums = new int[]{1, 2, 3, 2, 2, 2, 5, 4, 2};
+//        int[] nums = new int[]{1, 2, 3, 2, 2, 2, 5, 4, 2};
+//        int[] nums = new int [] {5,2,3,1};
+        int[] nums = new int [] {5,1,1,2,0,0};
         System.out.println(Arrays.toString(nums));
         quickSort(nums);
         System.out.println(Arrays.toString(nums));
@@ -42,9 +44,8 @@ public class Algorithms1_Arr_5_Quick {
 
     private static Integer partition(int[] nums, int start, int end) {
         int small = start;
-        int randomIndex = new Random().nextInt(end - start) + start;
         // 将选中的数字放到最后
-        swap(nums, randomIndex, end);
+        swap(nums, start, end);
         for (int i = start; i < end; i ++) {
             if (nums[i] < nums[end]) {
                 if (small != i) {
