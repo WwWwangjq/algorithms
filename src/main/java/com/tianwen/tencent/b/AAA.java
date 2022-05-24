@@ -10,6 +10,11 @@ public class AAA {
         AAA aaa = new AAA();
         int num = 12345;
         System.out.println(aaa.convert(num));
+
+        char[] chars = String.valueOf(num).toCharArray();
+        char c = chars[0];
+        System.out.println(c * 10);
+        System.out.println((c - '0') * 10);
     }
 
 //    整数， 输出反转后的整数
@@ -24,4 +29,5 @@ public class AAA {
         }
         return result;
     }
+
 }
