@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * @Author: wangjq
  * @Date: 2023年03月11日 10:34
  */
-public class LeetCode_146 {
+public class LeetCode_146_solution1 {
 
     class LRUCache {
 

@@ -8,7 +8,7 @@ import java.util.Objects;
  * @Author: wangjq
  * @Date: 2023年03月12日 18:04
  */
-public class LeetCode_21 {
+public class LeetCode_21_solution1 {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if (Objects.isNull(list1)) {

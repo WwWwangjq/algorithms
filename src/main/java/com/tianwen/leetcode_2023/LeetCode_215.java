@@ -37,7 +37,7 @@ public class LeetCode_215 {
     }
 
     private int partition(int[] nums, int left, int right) {
-        int partition = left;
+        int partition = nums[left];
         swap(nums, left, right);
         for (int i = left; i < right; i ++) {
             if (nums[i] < nums[right]) {
